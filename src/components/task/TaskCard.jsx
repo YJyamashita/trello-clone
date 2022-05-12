@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { TaskCardDeleteButton } from './button/TaskCardDeleteButton';
 import { TaskAddInput } from './input/TaskAddInput';
 import { TaskCardTitle } from './TaskCardTitle';
 import { Tasks } from './Tasks';
 
-export const TaskCard = () =>
-{
+export const TaskCard = ({
+	taskCardsList,
+  	setTaskCardsList,
+  	taskCard,
+  	index,
+}) => {
 	const [inputText, setInputText] = useState("");
-	const [taskList, setTaskList] = useState([]);
+  	const [taskList, setTaskList] = useState([]);
 	return (
 		<div className='taskCard'>
 			<TaskCardTitle />
@@ -18,7 +22,10 @@ export const TaskCard = () =>
 				setTaskList={setTaskList}
 				taskList={taskList}
 			/>
-			<Tasks />
+			<Tasks
+				inputText={inputText}
+				taskList={taskList}
+			/>
 		</div>
-	)
+	);
 };
