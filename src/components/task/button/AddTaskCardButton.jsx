@@ -3,6 +3,8 @@ import React from 'react'
 export const AddTaskCardButton = () =>
 {
 	return (
-		<div></div>
+		<div className='addTaskCardButtonArea'>
+			<button className='addTaskCardButton'>+</button>
+		</div>
 	)
 };
